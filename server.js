@@ -27,7 +27,7 @@ app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://dev-quest-ochre.vercel.app/', 'http://localhost:5174'],
+  origin: ['http://localhost:5173', 'https://dev-quest-ochre.vercel.app', 'http://localhost:5174'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Cookie', 'X-Requested-With']
@@ -58,7 +58,7 @@ app.use((err, req, res, next) => {
 const server = http.createServer(app);
 const io = socketio(server, {
   cors: {
-    origin: ['http://localhost:5173', 'https://dev-quest-ochre.vercel.app/'],
+    origin: ['http://localhost:5173', 'https://dev-quest-ochre.vercel.app'],
     methods: ['GET', 'POST'],
   },
 });
