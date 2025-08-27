@@ -54,11 +54,11 @@ app.use((err, req, res, next) => {
 });
 
 const server = http.createServer(app);
-const io = socketio(server, {
+const io = require("socket.io")(server, {
   cors: {
-    origin: ['http://localhost:5173', 'https://dev-quest-ochre.vercel.app'],
-    methods: ['GET', 'POST'],
-  },
+    origin: "https://dev-quest-ochre.vercel.app",
+    methods: ["GET", "POST"]
+  }
 });
 
 // Socket.io for real-time
