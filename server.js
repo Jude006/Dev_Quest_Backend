@@ -27,12 +27,10 @@ app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://dev-quest-ochre.vercel.app', 'http://localhost:5174'],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Cookie', 'X-Requested-With']
+  origin: "https://dev-quest-ochre.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
-
 app.use(express.json());
 app.use(cookieParser());
 
